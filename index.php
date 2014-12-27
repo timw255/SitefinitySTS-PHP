@@ -1,10 +1,6 @@
 <?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
-    
-    // http://localhost:8080/sts/index.php?realm=http%3a%2f%2fquantum.sitefinity.local%2f&redirect_uri=%2fsitefinity&deflate=true
-
-    // http://sts.local/index.php?realm=http%3a%2f%2fquantum.sitefinity.local%2f&redirect_uri=%2fsitefinity&deflate=true
 
     $values;
 
@@ -20,11 +16,11 @@ error_reporting(E_ALL | E_STRICT);
     $identity->claims[0] = new stdClass();
     $identity->claims[0]->claimType = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name';
     $identity->claims[0]->value = 'admin';
-    //$identity->claims[0]->value = 'moodler';
+    //$identity->claims[0]->value = 'someexternaluser';
     $identity->claims[1] = new stdClass();
     $identity->claims[1]->claimType = SitefinityClaimTypes::Domain;
     $identity->claims[1]->value = 'Default';
-    //$identity->claims[1]->value = 'MoodleMembershipProvider';
+    //$identity->claims[1]->value = 'SomeCustomMembershipProvider';
 
     $issuer = 'http://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
     
