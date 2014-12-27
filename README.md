@@ -1,4 +1,4 @@
-SitefinitySTS
+SitefinitySTS-PHP
 =============
 
 PHP STS for Sitefinity
